@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "editor"
+version = "0.1.0"
+description = ""
+authors = ["Boris Tvaroska <boris@tvaroska.sk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.14"
+python-fasthtml = "^0.6.10"
+google-cloud-aiplatform = "^1.70.0"
+litellm = "^1.49.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
