@@ -1,3 +1,4 @@
+import argparse
 import asyncio
 import json
 import uuid
@@ -21,7 +22,6 @@ from tqdm.asyncio import tqdm
 
 # Common globals
 http_client = httpx.AsyncClient()
-
 
 class Article(BaseModel):
     id: uuid.UUID = Field(default_factory=uuid.uuid4)
@@ -146,9 +146,9 @@ async def get_summary(article: Article) -> Article:
     return article
 
 
-async def main():
+async def main(args):
 
-    with open("settings.json") as f:
+    with open(args.settings) as f:
         data = json.load(f)
 
     starting_point = datetime.now() - timedelta(weeks=52)
@@ -157,7 +157,7 @@ async def main():
 
     updated_articles = await tqdm.gather(*tasks)
 
-    with open("articles.json", "w+") as f:
+    with open(args.output, "w+") as f:
         json.dump(
             {
                 "date": datetime.now().strftime("%b %d %Y"),
@@ -177,4 +177,11 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    parser = argparse.ArgumentParser(description='Process RSS feeds and generate summaries')
+    parser.add_argument('--settings', default='settings.json',
+                      help='Path to settings JSON file (default: settings.json)')
+    parser.add_argument('--output', default='articles.json',
+                      help='Output JSON filename (default: articles.json)')
+    
+    args = parser.parse_args()
+    asyncio.run(main(args))
