@@ -29,7 +29,6 @@ SUPPORTED_CURRENCIES = {
     }
  
 @mcp.tool(
-    name="get_conversion_rate",
     description="Get the conversion rate between two currencies",
 )
 async def get_conversion_rate(from_currency: str, to_currency: str) -> float:
@@ -46,7 +45,12 @@ async def get_conversion_rate(from_currency: str, to_currency: str) -> float:
     rate = c.get_rate(from_currency, to_currency)
         
     return rate
-        
+
+@mcp.tool(
+    description="CMultiplication of two floats"
+)
+async def multiplication(a: float, b: float) -> float:
+    return a * b
 
 @mcp.resource(
     "currency://{currency}",
@@ -61,4 +65,5 @@ async def get_currency_info(currency: str) -> Dict:
     
     return SUPPORTED_CURRENCIES[currency]
 
-mcp.run(transport="streamable-http")
+mcp.run(transport="sse")
+# mcp.run(transport="streamable-http")
