@@ -1,0 +1,16 @@
+[project]
+name = "retriever"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "asyncpg>=0.30.0",
+    "fastapi>=0.116.1",
+    "google-cloud-aiplatform>=1.104.0",
+    "litellm>=1.74.7",
+    "yava",
+]
+
+[tool.uv.sources]
+yava = { git = "ssh://git@github.com/tvaroska/yava" }
