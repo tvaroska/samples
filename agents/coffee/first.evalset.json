@@ -1,0 +1,81 @@
+{
+  "eval_set_id": "first",
+  "name": "first",
+  "eval_cases": [
+    {
+      "eval_id": "single espresso",
+      "conversation": [
+        {
+          "invocation_id": "e-f1c9d081-7742-4e0b-b335-72126519ea94",
+          "user_content": {
+            "parts": [
+              {
+                "text": "hi, single espreso pls"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Alright, a single Espresso for $1.00. Your current subtotal is $1.00.\n\nWould you like anything else today?",
+                "thought_signature": "CuABAePx_15xl6cdchlTGtHkhGm_K8ZuNnOF22-726RyL8YF9SFk8rkEa7If8nG7gF3aRA-Hk1WvlDcjPLljApxmnZm_MszzZsmxHX66k5LEXZ8MO9_BoQ5zmJcpOdfr2djSM3HqDFqhL7jp8YocB2BejgYa8Bk6MDWhGB7FBAedqUo7L8_ygO_zSANCSZ2Bog3ZHUtA5UlWz-Tv7Wb2KtIaqy3D6Bev0QIJn_EunEcOllSyn3_l4bLUwjC-Ln14ZzZP0jcNEEpI7VWPSzJeqIDLD1_UgoQNgac7_yqGwKWxD5U="
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "barista",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "Hello there! A single Espresso, got it!\n",
+                      "thought_signature": "CvEBAePx_14noaAuYrVBAf9aGxfwJb7uRoLwkMlxb80PP7jJz9iPV5NmGpa3U4O2vE-mZGUmIxnD9JIZFqMfLyzZzn24arhBRTMlo_YynFPTy6GM-actTi3T-GGqcsSTpge-NRqIaZ2j1ab9Fclh4XQgYjAk-xF-CEkrsWH3hB__181JBloqKV3TAuKQeOLZMe737RNtF4zmpyJJuLWm--Ttt2N2wbPM4PmPK50N22GGdXNILCnKbqpRepSszbkLd22CpeHUdMmtDuU88sXEP-vTFPCiniIQjrHZi6ks-V3RhGGpD4QmM27-LV1GxEFyQ25LZw=="
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-3b49a6c4-b095-47b0-8436-1f39e1416f06",
+                        "args": {
+                          "type": "Espresso",
+                          "size": "Single"
+                        },
+                        "name": "pricing"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "barista",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-3b49a6c4-b095-47b0-8436-1f39e1416f06",
+                        "name": "pricing",
+                        "response": {
+                          "result": "OK - Added Single Espresso for $1.00. Current subtotal: $1.00"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1763655777.791548
+        }
+      ],
+      "session_input": {
+        "app_name": "coffee",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1763655819.0237327
+    }
+  ],
+  "creation_timestamp": 1763655791.5088286
+}

@@ -1,0 +1,9 @@
+{
+  "skills": [
+    {
+      "name": "google-adk",
+      "description": "Expert assistant for Google ADK (Agent Development Kit) - helps with building AI agents, tools, multi-agent systems, and deployment",
+      "path": "google-adk.md"
+    }
+  ]
+}
