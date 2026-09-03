@@ -1,5 +1,0 @@
-flet
-feedparser
-tqdm
-tenacity
-google-genai
